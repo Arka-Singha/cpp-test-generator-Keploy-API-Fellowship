@@ -1,0 +1,30 @@
+# Ignore build artifacts
+build/
+*.exe
+*.out
+*.obj
+*.o
+*.a
+*.lib
+*.dll
+*.so
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Logs and coverage
+*.log
+*.gcov
+*.lcov
+coverage/
+
+# Editor/IDE files
+.vscode/
+.idea/
+*.swp
+
+# Generated test files (optional)
+tests/test_main.cpp
