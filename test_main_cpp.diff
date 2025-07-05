@@ -1,0 +1,106 @@
+diff --git a/tests/test_main.cpp b/tests/test_main.cpp
+index e69de29..937d9ea 100644
+--- a/tests/test_main.cpp
++++ b/tests/test_main.cpp
+@@ -0,0 +1,100 @@
++
++The build log shows that the `make` command is not recognized, which suggests that the Makefile is not present in the current directory. To resolve this issue, you can either create a Makefile or run the build command using a different build tool such as CMake or Gradle.
++
++Regarding the test code, there are several issues that need to be fixed:
++
++1. The `Person` class is not defined in the code snippet provided. You may want to define this class before creating an instance of it.
++2. The `PersonInfo` class has a typo in its constructor parameter list. It should be `string d` instead of `string hire_date`.
++3. The `add()` method in the `PersonDetails` class is not implemented correctly. It should use the `lower_bound()` function to find the position where the new element should be inserted, and then insert it at that position using the `insert()` function.
++4. The `toJson()` method in the `PersonDetails` class has a typo in its return type. It should be `Json::Value` instead of `int`.
++5. The test code is not correctly handling the case where an element with a given ID already exists in the `info` vector. In such cases, the method should update the existing element instead of inserting a new one.
++6. The test code is not correctly handling the case where no elements are found in the `info` vector. In such cases, the method should return an empty JSON object instead of nullptr.
++
++Here's the corrected test code:
++```c++
++#include <iostream>
++#include "PersonDetails.h"
++#include "gtest/gtest.h"
++using namespace std;
++
++class Person {
++private:
++    string first_name, last_name; // employee's name and id
++    int id;                        // employee ID
++public:
++    Person(string n, int i) {
++        first_name = n;
++        id = i;
++    }
++    string getFirstName() const { return first_name; }
++    int getId() const { return id; }
++};
++
++class Department {
++private:
++    string name; // department's name
++public:
++    Department(string n) { name = n; }
++    string getName() const { return name; }
++};
++
++class PersonInfo {
++private:
++    int id, hire_date; // employee's ID and hire date
++public:
++    PersonInfo(int i, string d) {
++        id = i;
++        hire_date = d.toDbStringLocal();
++    }
++    int getId() const { return id; }
++    string getDepartmentName() const { return d; }
++};
++
++class PersonDetails {
++private:
++    vector<PersonInfo> info; // employee's information in the form of a map (keyed by ID)
++public:
++    void add(string f, int i) {
++        auto it = lower_bound(begin(info), end(info), make_pair(i, PersonInfo(0)));
++        if (it == info.end()) { // if not found, insert the new one
++            info.insert(make_pair(i, PersonInfo(id, hire_date)));
++        } else { // if found, update it
++            auto &pi = it->second;
++            pi.hire_date = it->second.hire_date;
++        }
++    }
++    Json::Value toJson() {
++        Json::Value root;
++        for (const auto &e : info) {
++            Json::Value obj;
++            obj["id"] = e.first;
++            obj["name"] = e.second.getFirstName();
++            obj["hire_date"] = e.second.hire_date.toDbStringLocal();
++            root[e.first] = obj;
++        }
++        return root;
++    }
++};
++
++TEST(PersonDetails, ToJson) {
++    // Arrange
++    Person p1("John", 45);
++    PersonInfo p1i1("A", "2019-03-01");
++    Person p1i2("B", 47);
++    PersonInfo p2i1("C", "2018-03-01");
++    PersonDetails pd = {p1.getFirstName(), p1.getId()}; // set the employee information
++    pd.add(p1i1.getName(), p1i1.getId());
++    pd.add(p2i1.getName(), p2i1.getId());
++
++    // Act
++    Json::Value j = pd.toJson();
++
++    // Assert
++    EXPECT_EQ(j["John"]["id"], 45);
++    EXPECT_EQ(j["John"]["name"], "John");
++    EXPECT_EQ(j["John"]["hire_date"], "2019-03-01");
++    EXPECT_EQ(j["B"]["id"], 47);
++    EXPECT_EQ(j["B"]["name"], "B");
++    EXPECT_EQ(j["B"]["hire_date"], "2018-03-01");
++}
++```
+\ No newline at end of file

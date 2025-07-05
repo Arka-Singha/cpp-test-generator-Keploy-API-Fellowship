@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION ${CMAKE_VERSION}) # this file comes with cmake
 
 # Make file names absolute:
 #
-get_filename_component(filename "C:/Users/KIIT/OneDrive/Desktop/Keploy_API_Fellowship/cpp-test-generator-Keploy-API-Fellowship/build/_deps/googletest-subbuild/googletest-populate-prefix/src/main.zip" ABSOLUTE)
-get_filename_component(directory "C:/Users/KIIT/OneDrive/Desktop/Keploy_API_Fellowship/cpp-test-generator-Keploy-API-Fellowship/build/_deps/googletest-src" ABSOLUTE)
+get_filename_component(filename "C:/Users/KIIT/cpp-test-generator-Keploy-API-Fellowship/build/_deps/googletest-subbuild/googletest-populate-prefix/src/main.zip" ABSOLUTE)
+get_filename_component(directory "C:/Users/KIIT/cpp-test-generator-Keploy-API-Fellowship/build/_deps/googletest-src" ABSOLUTE)
 
 message(VERBOSE "extracting...
      src='${filename}'

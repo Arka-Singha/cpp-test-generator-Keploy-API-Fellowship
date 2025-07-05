@@ -1,0 +1,2 @@
+prompt: |
+  Analyze the build log and the test code. Fix any issues in the test code that caused build failure.

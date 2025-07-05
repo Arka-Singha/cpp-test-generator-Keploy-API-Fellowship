@@ -1,0 +1,9 @@
+prompt: |
+  You are an expert C++ unit test reviewer.
+  Review the following Google Test code and:
+  - Remove duplicate tests.
+  - Fix missing includes if needed.
+  - Improve naming and formatting.
+  - Ensure correctness of each test.
+  - Do not remove necessary tests.
+  - Only return the improved test code in your response.

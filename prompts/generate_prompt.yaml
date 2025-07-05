@@ -1,0 +1,2 @@
+prompt: |
+  Generate GoogleTest unit tests for the following C++ code. Use proper includes and avoid duplicates.

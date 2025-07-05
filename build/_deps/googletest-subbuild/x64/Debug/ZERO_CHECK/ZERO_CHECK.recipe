@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\KIIT\OneDrive\Desktop\Keploy_API_Fellowship\cpp-test-generator-Keploy-API-Fellowship\build\_deps\googletest-subbuild\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Users\KIIT\cpp-test-generator-Keploy-API-Fellowship\build\_deps\googletest-subbuild\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

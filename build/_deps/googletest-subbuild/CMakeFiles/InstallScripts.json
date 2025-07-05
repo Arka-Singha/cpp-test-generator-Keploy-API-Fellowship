@@ -1,7 +1,7 @@
 {
 	"InstallScripts" : 
 	[
-		"C:/Users/KIIT/OneDrive/Desktop/Keploy_API_Fellowship/cpp-test-generator-Keploy-API-Fellowship/build/_deps/googletest-subbuild/cmake_install.cmake"
+		"C:/Users/KIIT/cpp-test-generator-Keploy-API-Fellowship/build/_deps/googletest-subbuild/cmake_install.cmake"
 	],
 	"Parallel" : false
 }
