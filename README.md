@@ -93,6 +93,36 @@ Test #1: PersonTest.ToJsonOutput .......... Passed ✅
 
 ---
 
+## 📊 Architecture Flow
+
+> The system follows a strict prompt + feedback loop using YAML prompts:
+
+### 🔄 Generation, Refinement, Fixing (Prompt + LLM Architecture)
+
+1. **Initial Generation**
+
+   - Input: `main.cpp` + `generate_prompt.yaml`
+   - Output: GTest-style test file (e.g., `test_main.cpp`)
+
+2. **Refinement**
+
+   - Input: test file + `refine_prompt.yaml`
+   - Output: Deduplicated and cleaned test
+
+3. **Fix Build**
+
+   - Input: Build logs + test + `fix_build_prompt.yaml`
+   - Output: Error-resolved test file
+
+4. **Final Execution**
+
+   - Integrated with CMake + GoogleTest
+   - Coverage optionally enabled using `--coverage`
+
+>
+
+---
+
 ## 🧠 Model Used
 
 - **TinyLlama via Ollama** was used to run local inference and generate all test cases based on prompt YAMLs.
@@ -118,9 +148,11 @@ Located in `/prompts`:
 
 ---
 
-## 🏑️ Final Result Screenshots
+## 🎑️ Final Result Screenshots
 
 > CLI Flow
+>
+>
 
 > CTest Passing Output
 >
@@ -141,12 +173,6 @@ This tool demonstrates how LLMs like TinyLlama can automatically generate, refin
 ## 📢 Social Post (Optional)
 
 > 🔗 Add your social media post link here:
->
->
 
 ---
-
-## 📬 Submission Checklist
-
--
 
