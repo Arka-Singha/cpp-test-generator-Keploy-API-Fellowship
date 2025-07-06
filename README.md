@@ -1,14 +1,152 @@
-# C++ Test Generator - Keploy API Fellowship
+# 🚀 C++ Unit Test Generator using TinyLlama | Keploy API Fellowship - Session 5
 
-This project automates test generation, refinement, and build error fixing for C++ codebases.
+This project is built as part of the **Keploy API Fellowship - Session 5** and aims to automatically generate, refine, and fix unit tests for C++ applications using **LLMs like TinyLlama** via **Ollama**.
 
-## Structure
-- `input/`: Source C++ files
-- `scripts/`: Python scripts to automate tasks
-- `prompts/`: YAML prompt templates for LLMs
-- `tests/`: Output folder for generated test cases
+---
 
-## Usage
+## 📌 Objective
+
+To build a CLI tool that:
+
+1. **Generates** unit tests for a given C++ project using a local LLM.
+2. **Refines** those tests to remove duplicates and improve structure.
+3. **Fixes** build errors automatically by feeding error logs back to the LLM.
+
+---
+
+## 🧩 Tech Stack
+
+- **C++** (main application)
+- **Google Test** (testing framework)
+- **CMake** (build system)
+- **Python + YAML** (LLM integration logic)
+- **Ollama + TinyLlama** (Local LLM)
+
+---
+
+## 🏗️ Folder Structure
+
+```
+├── build/                 # Build output directory
+├── input/                # Contains input C++ files
+├── prompts/              # YAML prompts for generate/refine/fix steps
+├── scripts/              # Python logic to run LLM for test generation
+│   ├── generate/         # Generate & refine logic
+│   └── fix/              # Fix build error logic
+├── tests/                # Generated test files (GTest compatible)
+├── CMakeLists.txt        # Build configuration
+├── cli.py                # Command-line interface script
+└── README.md             # This file
+```
+
+---
+
+## ⚙️ How It Works
+
+### Step 1️: Generate Tests
+
 ```bash
-pip install -r requirements.txt
 python scripts/cli.py
+# Choose option: 1
+```
+
+✅ Output: `Tests generated successfully.`
+
+### Step 2️: Refine Tests
+
+```bash
+python scripts/cli.py
+# Choose option: 2
+```
+
+✅ Output: `Tests refined using LLM.`
+
+### Step 3️: Fix Build Errors (if needed)
+
+```bash
+python scripts/cli.py
+# Choose option: 3
+```
+
+✅ Output: `Build errors resolved using LLM.`
+
+### Step 4️: Build & Run Tests
+
+```bash
+cd build
+cmake ..
+cmake --build .
+ctest --output-on-failure
+```
+
+✅ Output:
+
+```
+100% tests passed, 0 tests failed out of 1
+```
+
+> 🔬 Test run includes:
+
+```
+Test #1: PersonTest.ToJsonOutput .......... Passed ✅
+```
+
+---
+
+## 🧠 Model Used
+
+- **TinyLlama via Ollama** was used to run local inference and generate all test cases based on prompt YAMLs.
+
+---
+
+## 📄 Prompts Overview
+
+Located in `/prompts`:
+
+- `generate_prompt.yaml`: For test generation
+- `refine_prompt.yaml`: For deduplication and cleanup
+- `fix_build_prompt.yaml`: For fixing errors using compiler logs
+
+---
+
+## 📈 Coverage & Output
+
+- ✅ Google Test used for execution
+- ✅ `ctest` shows 100% pass rate on refined tests
+- ⛳ LLM-generated tests matched function signatures in `main.cpp`
+- ✅ No build or linker error after final test refinement
+
+---
+
+## 🏑️ Final Result Screenshots
+
+> CLI Flow
+
+> CTest Passing Output
+>
+>
+
+> Alternate Run + Debug
+>
+>
+
+---
+
+## ✅ Conclusion
+
+This tool demonstrates how LLMs like TinyLlama can automatically generate, refine, and validate C++ unit tests locally using a strict prompt-based system. It can greatly accelerate unit test development in legacy or undocumented C++ codebases.
+
+---
+
+## 📢 Social Post (Optional)
+
+> 🔗 Add your social media post link here:
+>
+>
+
+---
+
+## 📬 Submission Checklist
+
+-
+
