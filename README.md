@@ -179,7 +179,7 @@ This tool demonstrates how LLMs like TinyLlama can automatically generate, refin
 
 ## 📢 Social Post (Optional)
 
-> 🔗 Add your social media post link here:
+> 🔗 https://www.linkedin.com/posts/arka-singha-99413225b_keployfellowship-aifortesting-opensource-activity-7347573418898149376-54gR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAD_pwgABrdCtiHghxJ-0vZmAtmksMh7rwDY
 
 ---
 
