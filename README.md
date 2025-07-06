@@ -119,13 +119,14 @@ Test #1: PersonTest.ToJsonOutput .......... Passed ✅
    - Integrated with CMake + GoogleTest
    - Coverage optionally enabled using `--coverage`
 
->
+>![image](https://github.com/user-attachments/assets/beef30cd-4421-47d3-ab34-c21064338d97)
+
 
 ---
 
 ## 🧠 Model Used
 
-- **TinyLlama via Ollama** was used to run local inference and generate all test cases based on prompt YAMLs.
+- **TinyLlama via Ollama** was used to run local inference and generate all test cases based on prompt YAMLs. It is suitable for limited RAM in local systems.
 
 ---
 
