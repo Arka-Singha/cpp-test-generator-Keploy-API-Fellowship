@@ -151,16 +151,21 @@ Located in `/prompts`:
 ## 🎑️ Final Result Screenshots
 
 > CLI Flow
->
->
+> ![WhatsApp Image 2025-07-05 at 14 12 39_30b43687](https://github.com/user-attachments/assets/753d4554-1ea2-429a-998b-8b99d2fd61e1)
+
+
 
 > CTest Passing Output
->
+
+>![WhatsApp Image 2025-07-05 at 18 05 23_2f70e05b](https://github.com/user-attachments/assets/3a207f4a-deb6-49bd-b5e3-3bebb50a8937)
+
 >
 
 > Alternate Run + Debug
->
->
+
+>![WhatsApp Image 2025-07-06 at 06 16 34_8168b344](https://github.com/user-attachments/assets/26250d0c-6241-43a1-be1b-0554553fb66e)
+>![WhatsApp Image 2025-07-06 at 08 21 24_af62677a](https://github.com/user-attachments/assets/98bd9017-74db-4342-b40a-aa2fb6fe5ee2)
+
 
 ---
 
